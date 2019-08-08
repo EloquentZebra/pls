@@ -68,12 +68,14 @@ h1 {
 .pps-header-wrapper {
   padding: 0.25rem;
   border-bottom: 1px solid var(--lt-border);
+  overflow: hidden;
 }
 
 .pps-box h2 {
   margin: 0;
   padding: 0;
   line-height: 1em;
+  overflow: hidden;
 }
 
 .pps-map-icon {
@@ -129,8 +131,7 @@ footer img:hover {
   }
 
   .container {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(15, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .pps-map-icon {
