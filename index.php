@@ -24,7 +24,6 @@
         $almostFull = '';
       }
 
-
       echo '<article class="pps-box">';
         echo '<div class="pps-header-wrapper"><h2>' . $array['lots'][$i]['name'] . '</h2></div>';
         echo '<div class="pps-main-wrapper">';
@@ -33,9 +32,7 @@
           echo '<a class="pps-map-icon" href="https://www.google.com/maps/search/Parkhaus+' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a>';
         echo '</div>';
       echo '</article>';
-      $i++;
-
-      
+      $i++;  
     }
 
   ?>
