@@ -9,8 +9,6 @@
 </head>
 <body>
 
-  <h1>Parkleitsystem</h1>
-
   <section class="container">
 
   <?php
@@ -52,5 +50,6 @@
   <p><a href="."><img src="img/refresh.svg"></a> <?php echo $fixedDate; ?></p>
 	<p><a href="https://api.parkendd.de/Basel" target="_blank">API</a> &middot; <a href="https://parkendd.de/map.html#Basel" target="_blank">Karte</a></p>
 </footer>
+	
 </body>
 </html>
