@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>PPS</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css?v=1.1">
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=1.2">
 </head>
 <body>
 
