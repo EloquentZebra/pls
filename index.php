@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>PPS</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=1.1">
 </head>
 <body>
 
@@ -45,7 +45,12 @@
 </section>
 
 <footer>
-  <p><a href="."><img src="img/refresh.svg"></a>  <?php echo $array['last_updated']; ?></p>
+  <?php
+    $date = $array['last_updated'];
+    $fixedDate = date('H:i, d.m.Y', strtotime($date));
+  ?>
+  <p><a href="."><img src="img/refresh.svg"></a> <?php echo $fixedDate; ?></p>
+	<p><a href="https://api.parkendd.de/Basel" target="_blank">API</a> &middot; <a href="https://parkendd.de/map.html#Basel" target="_blank">Karte</a></p>
 </footer>
 </body>
 </html>
