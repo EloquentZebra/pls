@@ -47,7 +47,7 @@
 <footer>
   <?php
     $date = $array['last_updated'];
-    $fixedDate = date('H:i, d.m.Y', strtotime($date));
+    $fixedDate = date('H:i, d.m.Y', strtotime($date) + 60*60 );
   ?>
   <p><a href="."><img src="img/refresh.svg"></a> <?php echo $fixedDate; ?></p>
 	<p><a href="https://api.parkendd.de/Basel" target="_blank">API</a> &middot; <a href="https://parkendd.de/map.html#Basel" target="_blank">Karte</a></p>
