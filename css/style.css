@@ -51,6 +51,7 @@ h1 {
 .container {
   width: 95%;
   margin: 0 auto;
+  padding-top: 1rem;
   max-width: 900px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -83,6 +84,12 @@ h1 {
   top: 0.25rem;
   right: 0.25rem;
   display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+	.pps-map-icon {
+		filter: invert(0.75);
+	}
 }
 
 .pps-main-wrapper {
@@ -124,13 +131,19 @@ footer img {
   height: 1em;
 }
 
+@media (prefers-color-scheme: dark) {
+	footer img {
+		filter: invert(0.75);
+	}
+}
+
 footer img:hover {
   animation:spin 4s linear infinite;
 }
 
 @keyframes spin { 100% {transform:rotate(-360deg); } }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   body {
     font-size: 0.8rem;
   }
@@ -146,6 +159,12 @@ footer img:hover {
 
   .pps-free {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr)
   }
 }
 
