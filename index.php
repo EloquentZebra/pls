@@ -28,8 +28,10 @@
     $json = file_get_contents("https://api.parkendd.de/Basel");
     $array = json_decode($json, true);
     
+    $arrayLength = count($array['lots']);
+
     $i = 0;
-    while ($i <= 14) {
+    while ($i < $arrayLength) {
 
       if ($array['lots'][$i]['free'] / $array['lots'][$i]['total'] < 0.15) {
         $almostFull = 'pps-danger';
@@ -42,7 +44,7 @@
         echo '<main class="pps-main-wrapper">';
           echo '<p class="pps-free ' . $almostFull . '">' . $array['lots'][$i]['free'] . '</p>';
           echo '<p class="pps-total">/ ' . $array['lots'][$i]['total'] . '</p>';
-          echo '<a class="pps-map-icon" href="https://www.google.com/maps/search/Parkhaus+' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a>';
+          echo '<a class="pps-map-icon" href="https://www.google.com/maps/search/' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a>';
         echo '</main>';
       echo '</article>';
       $i++;  
