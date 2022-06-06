@@ -41,14 +41,13 @@ body {
 	gap: 0.5em
 }
 
-.pls-map-icon,
-.pls-directions-icon {
+.pls-icon {
 	height: 1em;
 	width: 1em;;
 }
 
 @media(prefers-color-scheme: dark) {
-	.pls-map-icon {
+	.pls-icon {
 		filter: invert(1);
 	}
 }

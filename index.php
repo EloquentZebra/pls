@@ -40,7 +40,7 @@
       }
 
       echo '<article class="pls-box">';
-        echo '<header class="pls-header-wrapper"><h1>' . $array['lots'][$i]['name'] . '</h1><div class="pls-header-links"><a class="pls-directions-icon" href="https://www.google.com/maps/dir//' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/directions.svg" alt="Google Maps-Navigation nach Parkhaus ' . $array['lots'][$i]['name'] . ' aufrufen">   <a class="pls-map-icon" href="https://www.google.com/maps/search/' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a></div></header>';
+        echo '<header class="pls-header-wrapper"><h1>' . $array['lots'][$i]['name'] . '</h1><div class="pls-header-links"><a class="pls-icon pls-directions-icon" href="https://www.google.com/maps/dir//' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/directions.svg" alt="Google Maps-Navigation nach Parkhaus ' . $array['lots'][$i]['name'] . ' aufrufen">   <a class="pls-icon pls-map-icon" href="https://www.google.com/maps/search/' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a></div></header>';
         echo '<main class="pls-main-wrapper">';
           echo '<p class="pls-free ' . $almostFull . '">' . $array['lots'][$i]['free'] . '</p>';
           echo '<p class="pls-total">/ ' . $array['lots'][$i]['total'] . '</p>';
