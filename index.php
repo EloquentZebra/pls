@@ -6,19 +6,7 @@
   <title>Parkleitsystem</title>
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="img/favicon/site.webmanifest">
-  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#204a87">
-  <link rel="shortcut icon" href="img/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#204a87">
-  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#204a87">
-
+  <link rel="shortcut icon" href="favicon/favicon.ico">
 </head>
 <body class="enable-dm">
 
