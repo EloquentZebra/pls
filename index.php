@@ -1,34 +1,39 @@
+<?php 
+  require_once('credentials.php');
+
+  if(isset($_GET['city'])) {
+    $choosenCity = htmlspecialchars($_GET["city"]);
+    if ($choosenCity == "Zürich") {
+      $apiUrl = "https://api.parkendd.de/Zuerich";
+    } elseif ($choosenCity == "Basel") {
+      $apiUrl = "https://api.parkendd.de/Basel";
+    } else {
+      $apiUrl = "https://api.parkendd.de/Basel";
+    }
+  } else {
+    $apiUrl = "https://api.parkendd.de/Basel";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Parkleitsystem</title>
+  <title>Parkleitsystem <?php echo($choosenCity); ?></title>
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="favicon/favicon.ico">
-</head>
-<body class="enable-dm">
 
-  <section class="container">
+  <!-- Mapbox -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body class="enable-dm container" id="<?php echo(strtolower($choosenCity));?>">
+
+  <section class="pls-grid">
 
   <?php
-
-    if(isset($_GET['city'])) {
-      $choosenCity = htmlspecialchars($_GET["city"]);
-      if ($choosenCity == "Zürich") {
-        $apiUrl = "https://api.parkendd.de/Zuerich";
-      } elseif ($choosenCity == "Basel") {
-        $apiUrl = "https://api.parkendd.de/Basel";
-      } else {
-        $apiUrl = "https://api.parkendd.de/Basel";
-      }
-    } else {
-      $apiUrl = "https://api.parkendd.de/Basel";
-    }
-    
-    
-
     $json = file_get_contents($apiUrl);
     $array = json_decode($json, true);
     
@@ -50,7 +55,7 @@
       }
 
       echo '<article class="pls-box">';
-        echo '<header class="pls-header-wrapper"><h1>' . $array['lots'][$i]['name'] . '</h1><div class="pls-header-links"><a class="pls-icon pls-directions-icon" href="https://www.google.com/maps/dir//' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/directions.svg" alt="Google Maps-Navigation nach Parkhaus ' . $array['lots'][$i]['name'] . ' aufrufen">   <a class="pls-icon pls-map-icon" href="https://www.google.com/maps/search/' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+Basel" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a></div></header>';
+        echo '<header class="pls-header-wrapper"><h1>' . $array['lots'][$i]['name'] . '</h1><div class="pls-header-links"><a class="pls-icon pls-directions-icon" href="https://www.google.com/maps/dir//' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+' . $choosenCity . '" target="_blank"><img src="img/directions.svg" alt="Google Maps-Navigation nach Parkhaus ' . $array['lots'][$i]['name'] . ' aufrufen">   <a class="pls-icon pls-map-icon" href="https://www.google.com/maps/search/' . $array['lots'][$i]['lot_type'] . ' ' . $array['lots'][$i]['name'] . '+' . $choosenCity . '" target="_blank"><img src="img/map.svg" alt="Google Maps-Suche nach Parkhaus ' . $array['lots'][$i]['name'] . '"></a></div></header>';
         echo '<main class="pls-main-wrapper">';
           echo '<p class="pls-free ' . $almostFull . '">' . $freeLots . '</p>';
           echo '<p class="pls-total">/ ' . $totalLots . '</p>';
@@ -62,6 +67,11 @@
   ?>
 
 </section>
+
+<?php if ($choosenCity == "Basel") {
+  require('map.php');
+}
+?>
 
 <footer class="text-center text-small">
   <a href="index.php?city=Basel"><button>Basel</button></a>
